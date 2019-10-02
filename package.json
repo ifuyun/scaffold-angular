@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --deploy-url /app/",
+    "start": "ng serve --deploy-url=/app/",
+    "proxy": "ng serve --deploy-url=/app/ --proxyConfig=proxy.conf.json",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
