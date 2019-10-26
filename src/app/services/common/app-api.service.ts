@@ -10,7 +10,6 @@ import { API } from '../config/api';
   providedIn: 'root'
 })
 export class AppApiService extends BaseApiService {
-
   protected baseApiUrl = '/api';
   protected api = API;
 
@@ -29,11 +28,11 @@ export class AppApiService extends BaseApiService {
     if (body === null) {
       return {} as T;
     }
-    return (body.data || {}) as T;
+    return (body.data === null || body.data === undefined ? {} : body.data) as T;
   }
 
   private static handleRawResponse<T extends ResponseResult>(response: HttpResponse<T>): T {
-    return (response.body || {}) as T;
+    return (response.body === null || response.body === undefined ? {} : response.body) as T;
   }
 
   protected init(): void {
