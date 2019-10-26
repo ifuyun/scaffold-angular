@@ -28,7 +28,8 @@ export class AdminLayoutComponent extends BaseComponent {
     this.router.events.pipe(takeUntil(this.unsubscribe$)).subscribe((e) => {
       if (e instanceof NavigationEnd) {
         if (e.urlAfterRedirects === '/admin') {
-          this.routerService.redirect('/admin/dashboard');
+          // todo: should replace with real path
+          this.routerService.redirect('/admin/demo');
         }
       }
     });
